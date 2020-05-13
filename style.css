@@ -1,0 +1,45 @@
+/**Usa a tag inteira.**/
+body {  /**Seletor + chaves**/
+    background-image: url('https://wallpapercave.com/wp/cOHHn9L.jpg');  /**Propriedade.**/
+    background-size: auto 100vh;  /**100vh - viewport high, 100% da altura da tela.**/
+    font-family: Arial;
+    height: 100vh;  /**Altura do 'body' sempre a mesma.**/
+}
+
+/**@Id - seletor específico de uma tag específica, causa problemas de preferência.**/
+
+/**Usar atributo da classe para referenciar todos os elementos da classe no CSS.**/
+.menu {
+    background-color: white;
+}
+
+a {
+    color: teal;
+    text-decoration: none;
+}
+
+/**Peseudo classe do CSS.**/
+a:hover {
+    text-decoration: underline;
+}
+
+.menu ul {
+    display: flex;  /**'ul' na mesma linha.**/
+    justify-content: space-around;  /**coloca espaços iguais entre as 'li' dentro do 'ul'.**/
+}
+
+/**Todas as 'li' dentro da tag 'menu'.**/
+.menu li {
+    list-style: none;
+}
+
+/**Propriedade para mais de um atributo.**/
+.site-subtitle,
+.site-title {
+    color: whitesmoke;
+    text-align: center;
+}
+
+.site-subtitle {
+    font-style: italic;
+}
