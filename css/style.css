@@ -12,6 +12,7 @@ body {  /**Seletor + chaves**/
     font-family: Arial;
     height: 100vh;  /**Altura do 'body' sempre a mesma.**/
     font-size: 12px;
+    font-family: 'Source Code Pro', monospace;  /**Todo seletor que não for definido será com essa fonte.**/
 }
 
 /**"If" para telas com pelo menos 400px.**/
@@ -77,14 +78,56 @@ a:hover {
 }
 
 .site-title {
-    font-size: 2em;  /**Unidade relativa**/
+    font-size: 4em;  /**Unidade relativa**/
+    font-family: 'Sacramento', cursive;
 }
 
 .site-subtitle {
     font-style: italic;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.8em;
+}
+
+.portfolio {
+    padding: 2em;
+    height: 100vh;
+}
+
+.portfolio h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: whitesmoke;
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
+.portfolio .grid {
+    display: grid;  /**Ao contrario do 'flex' numero de colunas é determinado.**/
+    gap: 2em;  /**similar ao 'margin', mas para o grid.**/
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 8em - 48px);  /**Calcular de medidas com unidades diferentes.**/
+}
+
+@media (min-width: 560px) {
+    .portfolio .grid {
+        grid-template-columns: 240px 240px;
+    }
+}
+
+@media (min-width: 860px) {
+    .portfolio .grid {
+        grid-template-columns: repeat(3, 240px);
+    }
+}
+
+.portfolio figure {
+    text-align: center;  /**Passa como herança para filhas.**/
 }
 
 .img-portfolio {
     height: 180px;
-    width: 180px;
+    width: 240px;
+    object-fit: cover;  /**Espalham pela dimensão determinada anteriormente.**/
+    object-position: left bottom;  /**Foco no canto esquerdo**/
+    border-radius: 100%;
 }
