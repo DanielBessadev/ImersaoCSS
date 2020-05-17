@@ -6,22 +6,23 @@
     <title>Portfólio - Daniel Bessa</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sacramento&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/59849c27d5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <nav class='menu'>
             <ul>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Projetos</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#portfolio">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
-        <div>
+        <div class="titulo">
             <h1 class="site-title">Daniel Bessa</h1>
             <h2 class="site-subtitle">jr. frontend developer</h2>
         </div>
     </header>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">  <!-- Classe para referência ao CSS e Id para ancorar a links.-->
         <h2>Projetos</h2>
         <div class="grid">
           <figure>
@@ -40,6 +41,23 @@
             <img class="img-portfolio" src="./img/projpessoais-creditos-hal-gatewood-unsplash.jpg" alt="Projetos pessoais">
             <figcaption>Projetos pessoais</figcaption>
           </figure>
+        </div>
+      </section>
+      <section class="contato" id="contato">
+        <h2>Contato</h2>
+        <div class="grid icons">
+          <a target="_blank" href="https://github.com/DanielBessadev">
+            <i class="fab fa-github"></i>
+          </a>
+          <a target="_blank" href="https://cursos.alura.com.br/user/danielbbessa/fullCertificate/d8984aa33888806543a3775fdc1a6d1c">
+            <i class="fas fa-certificate"></i>
+          </a>
+          <a target="_blank" href="https://linkedin.com">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:danielbessadev@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
       </section>
 </body>

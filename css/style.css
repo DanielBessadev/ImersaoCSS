@@ -9,7 +9,6 @@
 body {  /**Seletor + chaves**/
     background-image: url('../img/fundo.jpg');/**Propriedade.**/
     background-size: auto 100vh;  /**100vh - viewport high, 100% da altura da tela.**/
-    font-family: Arial;
     height: 100vh;  /**Altura do 'body' sempre a mesma.**/
     font-size: 12px;
     font-family: 'Source Code Pro', monospace;  /**Todo seletor que não for definido será com essa fonte.**/
@@ -28,6 +27,12 @@ body {  /**Seletor + chaves**/
     }
 }
 
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+}
+
 header {
     height: 100vh;
     display: flex;  /**Reconhece elementos imediatamente para baixo da tag 'header', mãe e filho.**/
@@ -42,12 +47,30 @@ header {
     position: fixed;  /**Elemento fixo, por cima de todos os elementos. '.menu' não mais flex pela propriedade display do 'header', necessário novas propriedades no 'header', justify-content, align-items. E declarar a propriedade top no '.menu'.**/
     width: 100vw;
     top: 0;
+    z-index: 1;  /**Menu fica mais alto que qualquer animação. no meio da página, animação das fotos não irá tampar o menu.**/
+}
+
+.menu ul {
+    display: flex;  /**'ul' na mesma linha.**/
+    justify-content: space-around;  /**coloca espaços iguais entre as 'li' dentro do 'ul'.**/
+}
+
+/**Todas as 'li' dentro da tag 'menu'.**/
+.menu li {
+    list-style: none;
 }
 
 .menu a {  /**Aumentar área do menu para usabilidade de click.**/
     /**padding: 10px; <a> é uma tag inline, não afetada pelo padding**/
     display: block;  /**Retira a propriedade inline de <a>.**/
     padding: 10px 20px;
+    transition: background-color 1s, color 1s;  /**Transição declarada antes do 'hover'.**/
+}
+
+.menu a:active,
+.menu a:hover {
+    background-color: teal;
+    color: white;
 }
 
 a {
@@ -60,14 +83,20 @@ a:hover {
     text-decoration: underline;
 }
 
-.menu ul {
-    display: flex;  /**'ul' na mesma linha.**/
-    justify-content: space-around;  /**coloca espaços iguais entre as 'li' dentro do 'ul'.**/
+.titulo {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+    animation: 1s ease .5s animacaoTitulo forwards;  /****/
 }
 
-/**Todas as 'li' dentro da tag 'menu'.**/
-.menu li {
-    list-style: none;
+@keyframes animacaoTitulo {  /**Criação da Animação.**/
+    from {
+        transform: scale(0.2) translateY(50vh);
+        opacity: 0;
+    } to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
 }
 
 /**Propriedade para mais de um atributo.**/
@@ -88,14 +117,17 @@ a:hover {
     line-height: 1.8em;
 }
 
+.contato,
 .portfolio {
     padding: 2em;
-    height: 100vh;
+    min-height: 100vh;  /**Dispositivos pequenos não sobreporem as sections.**/
 }
 
+.contato h2,
 .portfolio h2 {
     font-family: 'Press Start 2P', cursive;
     color: whitesmoke;
+    margin-top: 0.5em;
     margin-bottom: 1em;
     font-size: 2em;
 }
@@ -103,9 +135,6 @@ a:hover {
 .portfolio .grid {
     display: grid;  /**Ao contrario do 'flex' numero de colunas é determinado.**/
     gap: 2em;  /**similar ao 'margin', mas para o grid.**/
-    align-content: center;
-    justify-content: center;
-    height: calc(100vh - 8em - 48px);  /**Calcular de medidas com unidades diferentes.**/
 }
 
 @media (min-width: 560px) {
@@ -114,9 +143,12 @@ a:hover {
     }
 }
 
-@media (min-width: 860px) {
+@media (min-width: 880px) {
     .portfolio .grid {
-        grid-template-columns: repeat(3, 240px);
+        grid-template-columns: repeat(3, 260px);
+        align-content: center;
+        justify-content: center;
+        height: calc(100vh - 8em - 48px);  /**Calcular de medidas com unidades diferentes.**/
     }
 }
 
@@ -130,4 +162,25 @@ a:hover {
     object-fit: cover;  /**Espalham pela dimensão determinada anteriormente.**/
     object-position: left bottom;  /**Foco no canto esquerdo**/
     border-radius: 100%;
+    transition: transform 500ms;
+}
+
+.img-portfolio:hover {
+    transform: scale(1.2) rotate(-2deg);
+  }
+  
+.contato .icons {
+    text-align: center;
+}
+  
+.contato a {
+    color: whitesmoke;
+    font-size: 4em;
+    transition: text-shadow 1s;
+}
+  
+.contato a:active,
+.contato a:hover  {
+    text-decoration: none;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
 }
