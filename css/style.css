@@ -23,6 +23,8 @@ body {  /**Seletor + chaves**/
 
 @media (min-width: 600px) {
     body {
+        background-attachment: fixed;
+        background-size: cover;
         font-size: 16px;
     }
 }
@@ -83,19 +85,20 @@ a:hover {
     text-decoration: underline;
 }
 
-.titulo {
-    transform: scale(0.2) translateY(50vh);
-    opacity: 0;
-    animation: 1s ease .5s animacaoTitulo forwards;  /****/
+.titulo::after {
+    content: '|';
+    color: whitesmoke;
+    font-size: 2em;
+    margin-left: 5px;
+    opacity: 1;
+    animation: pisca .7s infinite;  /****/
 }
 
-@keyframes animacaoTitulo {  /**Criação da Animação.**/
+@keyframes pisca {  /**Criação da Animação.**/
     from {
-        transform: scale(0.2) translateY(50vh);
-        opacity: 0;
-    } to {
-        transform: scale(1) translateY(0);
         opacity: 1;
+    } to {
+        opacity: 0;
     }
 }
 
@@ -117,19 +120,62 @@ a:hover {
     line-height: 1.8em;
 }
 
+.sobre,
 .contato,
 .portfolio {
     padding: 2em;
     min-height: 100vh;  /**Dispositivos pequenos não sobreporem as sections.**/
 }
 
+@media (min-width: 1200px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+    }
+}
+
+.sobre h2,
 .contato h2,
 .portfolio h2 {
     font-family: 'Press Start 2P', cursive;
     color: whitesmoke;
-    margin-top: 0.5em;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     font-size: 2em;
+}
+
+.sobre p {
+    color: white;
+    text-indent: 1.4em;
+    margin-bottom: 1.4em;
+    text-align: justify;
+}
+
+.sobre a {
+    color: cyan;
+}
+
+.sobre a:hover {
+    text-decoration: underline;
+}
+
+.sobre .avatar {
+    float: right;
+    margin-left: 1.5em;
+}
+
+.img-sobre {
+    height: 240px;
+    width: 240px;
+    object-fit: cover;
+    clip-path: polygon(50% 25%, 100% 0, 100% 75%, 50% 100%, 0% 75%, 0 0);
+}
+
+@media (min-width: 600px) {
+    .img-sobre {
+        clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+        rotate: 45;
+    }
 }
 
 .portfolio .grid {
@@ -152,23 +198,53 @@ a:hover {
     }
 }
 
+.flipcard {  /**Ocupa a coluna do grid.**/
+    height: 180px;
+    perspective: 500px;
+}
+
+.flipcard:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card {
+    position: relative;  /**front e back estão em uma posição relativa ao 'card' (em cima do 'card').**/
+    transform-style: preserve-3d;  /**possibilita ver ambos os lados.**/
+    transition: transform 2s;
+}
+
+.frontcard,
+.backcard {
+    backface-visibility: hidden;
+    left: 0;
+    position: absolute;  /**Ocupam a mesma posição.**/
+    top: 0;
+    width: 100%;
+}
+
+.backcard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 180px;
+    width: 100%;
+    border-radius: 50%;
+    transform: rotateY(180deg);
+}
+
 .portfolio figure {
     text-align: center;  /**Passa como herança para filhas.**/
 }
 
 .img-portfolio {
     height: 180px;
-    width: 240px;
+    width: 100%;
     object-fit: cover;  /**Espalham pela dimensão determinada anteriormente.**/
     object-position: left bottom;  /**Foco no canto esquerdo**/
-    border-radius: 100%;
-    transition: transform 500ms;
+    border-radius: 50%;
 }
 
-.img-portfolio:hover {
-    transform: scale(1.2) rotate(-2deg);
-  }
-  
 .contato .icons {
     text-align: center;
 }

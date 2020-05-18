@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav class='menu'>
-            <ul>
+            <ul class="container">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#portfolio">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
@@ -22,43 +22,87 @@
             <h2 class="site-subtitle">jr. frontend developer</h2>
         </div>
     </header>
-    <section class="portfolio" id="portfolio">  <!-- Classe para referência ao CSS e Id para ancorar a links.-->
+    <section class="sobre container" id="sobre">
+      <h2>Sobre</h2>
+      <figure class="avatar">
+        <img class="img-sobre" src="./img/Eu.jpg" alt="Foto">
+      </figure>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste voluptates officiis ea labore nisi obcaecati. Accusamus, a maxime hic ex dolorum quia sapiente velit dolores accusantium nostrum, amet, sed veniam.</p>
+      <p>Tempora odit dolorem atque eos necessitatibus ad illum, aperiam neque facere deleniti sunt rem tenetur iste consequuntur vitae commodi recusandae error pariatur voluptate vel reprehenderit est et doloribus. Deleniti, perferendis.</p>
+      <p>Omnis aut neque quibusdam magni consequatur fugiat possimus voluptates libero illo ullam cum distinctio perferendis voluptas, eius at alias ipsa temporibus nisi laboriosam maxime suscipit. Expedita quisquam accusantium quibusdam tenetur!</p>
+      <p>Deserunt exercitationem eius voluptas, fuga, voluptatem culpa dolor eligendi nulla quis in obcaecati consectetur rerum voluptates iusto, animi enim debitis. Nulla, quia. Aperiam labore quibusdam, quidem cum nisi laboriosam commodi!</p>
+      <p>
+        Este site foi construído durante a <a href="https://www.alura.com.br/imersao-css">Imersão CSS da Alura.</a>
+      </p>
+    </section>
+    <section class="portfolio container" id="portfolio">  <!-- Classe para referência ao CSS e Id para ancorar a links.-->
         <h2>Projetos</h2>
+        
         <div class="grid">
-          <figure>
-            <img class="img-portfolio" src="./img/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg" alt="Backend">
-            <figcaption>Backend</figcaption>
-          </figure>
-          <figure>
-            <img class="img-portfolio" src="./img/mobile-creditos-nate-grant-unsplash.jpg" alt=">Frontend">
-            <figcaption>Frontend</figcaption>
-          </figure>
-          <figure>
-            <img class="img-portfolio" src="./img/webdesign-creditos-domenico-loia-unsplash.jpg" alt="DataScience">
-            <figcaption>DataScience</figcaption>
-          </figure>
-          <figure>
-            <img class="img-portfolio" src="./img/projpessoais-creditos-hal-gatewood-unsplash.jpg" alt="Projetos pessoais">
-            <figcaption>Projetos pessoais</figcaption>
-          </figure>
+          
+          <div class="flipcard">
+            <div class="card">
+              <figure class="frontcard">
+                <img class="img-portfolio" src="./img/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg" alt="Backend">
+              </figure>
+              <div class="backcard">
+                <h3>Backend</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flipcard">
+            <div class="card">
+              <figure class="frontcard">
+                <img class="img-portfolio" src="./img/mobile-creditos-nate-grant-unsplash.jpg" alt=">Frontend">
+              </figure>
+              <div class="backcard">
+                <h3>Frontend</h3>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="flipcard">
+            <div class="card">
+              <figure class="frontcard">
+                <img class="img-portfolio" src="./img/webdesign-creditos-domenico-loia-unsplash.jpg" alt="DataScience">
+              </figure>
+              <div class="backcard">
+                <h3>DataScience</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="flipcard">
+            <div class="card">
+              <figure class="frontcard">
+                <img class="img-portfolio" src="./img/projpessoais-creditos-hal-gatewood-unsplash.jpg" alt="Projetos pessoais">
+              </figure>
+              <div class="backcard">
+                <h3>Projetos Pessoais</h3>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </section>
-      <section class="contato" id="contato">
-        <h2>Contato</h2>
-        <div class="grid icons">
-          <a target="_blank" href="https://github.com/DanielBessadev">
-            <i class="fab fa-github"></i>
-          </a>
-          <a target="_blank" href="https://cursos.alura.com.br/user/danielbbessa/fullCertificate/d8984aa33888806543a3775fdc1a6d1c">
-            <i class="fas fa-certificate"></i>
-          </a>
-          <a target="_blank" href="https://linkedin.com">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="mailto:danielbessadev@gmail.com">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-      </section>
+    </section>
+    <section class="contato container" id="contato">
+      <h2>Contato</h2>
+      <div class="grid icons">
+        <a target="_blank" href="https://github.com/DanielBessadev">
+          <i class="fab fa-github"></i>
+        </a>
+        <a target="_blank" href="https://cursos.alura.com.br/user/danielbbessa/fullCertificate/d8984aa33888806543a3775fdc1a6d1c">
+          <i class="fas fa-certificate"></i>
+        </a>
+        <a target="_blank" href="https://linkedin.com">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:danielbessadev@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </section>
 </body>
 </html>
