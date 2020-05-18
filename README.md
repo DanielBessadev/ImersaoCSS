@@ -1,2 +1,2 @@
-# ImerssaoCSS
+# ImersaoCSS
 Estudo inicial de CSS.
